@@ -15,6 +15,7 @@ const authProvider = {
                     throw new Error(response.statusText);
                 }
             }).then(auth => {
+                console.log(auth)
                 localStorage.setItem('auth', JSON.stringify(auth));
             }).catch(() => {
                 throw new Error('Network error')

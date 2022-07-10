@@ -5,7 +5,6 @@ import httpClient from "../../services/http";
 const accountProvider =  {
     getList: (resource, params) => {
         const { page, perPage } = params.pagination;
-        // const { field, order } = params.sort;
         const query = {
             offset: (page - 1) * perPage,
             count: perPage
