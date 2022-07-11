@@ -1,6 +1,6 @@
 import { Datagrid, TextField, List, DeleteWithConfirmButton, EditButton } from 'react-admin';
 
-export const WAccountList = () => (
+const WAccountList = () => (
     <List exporter={false}>
         <Datagrid sx={{
                       "& .RaDatagrid-headerCell": {
@@ -19,3 +19,5 @@ export const WAccountList = () => (
         </Datagrid>
     </List>
 );
+
+export default WAccountList;
