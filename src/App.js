@@ -8,14 +8,18 @@ import WAccountList from "./components/widgets/lists/WAccountList";
 import WAccountShow from "./components/widgets/forms/WAccountShow";
 import WAccountCreate from "./components/widgets/forms/WAccountCreate";
 import WAccountEdit from "./components/widgets/forms/WAccountEdit";
+import WResearchList from "./components/widgets/lists/WResearchList";
+import WResearchShow from "./components/widgets/forms/WResearchShow";
+import WResearchCreate from "./components/widgets/forms/WResearchCreate";
+import WResearchEdit from "./components/widgets/forms/WResearchEdit";
 import GroupIcon from '@mui/icons-material/Group';
+import PollIcon from '@mui/icons-material/Poll';
+// import BallotIcon from '@mui/icons-material/Ballot';
 
-const UILayout = (props) => <Layout {...props} appBar={UIAppBar} />;
+const UILayout = (props) => <Layout { ...props } appBar={ UIAppBar } />;
 
 const dataProvider = combineDataProviders(resource => {
     switch (resource) {
-        case "accounts":
-            return new BaseDataProvider();
         default:
             return new BaseDataProvider();
     }
@@ -24,15 +28,21 @@ const dataProvider = combineDataProviders(resource => {
 const App = () => (
     <Admin dataProvider={ dataProvider }
            authProvider={ authProvider }
-           i18nProvider={i18nProvider}
-           layout={UILayout}
+           i18nProvider={ i18nProvider }
+           layout={ UILayout }
            requireAuth>
         <Resource name="accounts"
-                  list={WAccountList}
-                  show={WAccountShow}
-                  create={WAccountCreate}
-                  edit={WAccountEdit}
-                  icon={GroupIcon}/>
+                  list={ WAccountList }
+                  show={ WAccountShow }
+                  create={ WAccountCreate }
+                  edit={ WAccountEdit }
+                  icon={ GroupIcon } />
+        <Resource name="researches"
+                  list={ WResearchList }
+                  show={ WResearchShow }
+                  create={ WResearchCreate }
+                  edit={ WResearchEdit }
+                  icon={ PollIcon } />
     </Admin>
 );
 

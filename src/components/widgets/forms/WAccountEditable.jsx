@@ -1,7 +1,6 @@
 import { Form, TextInput, SelectInput, SaveButton, PasswordInput } from "react-admin";
 import { Grid } from '@mui/material';
 
-
 const PasswordValidate = values => {
     const errors = {};
     if (!values.userName) {
