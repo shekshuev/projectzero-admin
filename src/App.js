@@ -12,9 +12,11 @@ import WResearchList from "./components/widgets/lists/WResearchList";
 import WResearchShow from "./components/widgets/forms/WResearchShow";
 import WResearchCreate from "./components/widgets/forms/WResearchCreate";
 import WResearchEdit from "./components/widgets/forms/WResearchEdit";
+import WSurveyList from "./components/widgets/lists/WSurveyList";
+import WSurveyShow from "./components/widgets/forms/WSurveyShow";
 import GroupIcon from '@mui/icons-material/Group';
 import PollIcon from '@mui/icons-material/Poll';
-// import BallotIcon from '@mui/icons-material/Ballot';
+import BallotIcon from '@mui/icons-material/Ballot';
 
 const UILayout = (props) => <Layout { ...props } appBar={ UIAppBar } />;
 
@@ -43,6 +45,10 @@ const App = () => (
                   create={ WResearchCreate }
                   edit={ WResearchEdit }
                   icon={ PollIcon } />
+        <Resource name="surveys"
+                  list={ WSurveyList }
+                  show={ WSurveyShow }
+                  icon={ BallotIcon }/>
     </Admin>
 );
 

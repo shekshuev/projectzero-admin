@@ -31,6 +31,27 @@ const en = {
                 beginDate: "Begin date",
                 endDate: "End date"
             }
+        },
+        surveys: {
+            name: "Survey |||| Surveys",
+            fields: {
+                id: "ID",
+                title: "Title",
+                description: "Description",
+                beginDate: "Begin date",
+                endDate: "End date",
+                questions: "Questions",
+                question: {
+                    id: "ID",
+                    title: "Title",
+                    type: "Type",
+                    answer: {
+                        id: "ID",
+                        text: "Text",
+                        code: "Answer code"
+                    }
+                }
+            }
         }
     },
     errors: {
@@ -67,6 +88,27 @@ const ru = {
                 description: "Описание",
                 beginDate: "Дата начала",
                 endDate: "Дата окончания"
+            }
+        },
+        surveys: {
+            name: "Опрос |||| Опросы",
+            fields: {
+                id: "ID",
+                title: "Название",
+                description: "Описание",
+                beginDate: "Дата начала",
+                endDate: "Дата окончания",
+                questions: "Вопросы",
+                question: {
+                    id: "ID",
+                    title: "Текст вопроса",
+                    type: "Тип вопроса",
+                    answer: {
+                        id: "ID",
+                        text: "Текст ответа",
+                        code: "Код ответа"
+                    }
+                }
             }
         }
     },
