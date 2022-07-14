@@ -1,6 +1,6 @@
 import { Form, TextInput, SaveButton } from "react-admin";
 import { Grid } from '@mui/material';
-import UIDateTimeInput from "../../ui/UIDateTimeInput";
+import UIDateTimeInput from "../../ui/inputs/UIDateTimeInput";
 
 const WResearchEditable = () => (
     <Form>

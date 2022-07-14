@@ -1,4 +1,5 @@
 import { Show, TextField, DateField, SimpleShowLayout, ArrayField, Datagrid, useTranslate } from "react-admin";
+import UIMapField from "../../ui/fields/UIMapField";
 
 const Answers = () => {
     const translate = useTranslate();
@@ -12,7 +13,7 @@ const Answers = () => {
                 <TextField source="code"
                            label={ translate("resources.surveys.fields.question.answer.code") }/>
             </Datagrid>
-        </ArrayField>)
+        </ArrayField>);
 }
 const WSurveyShow = () => {
     const translate = useTranslate();
@@ -29,6 +30,7 @@ const WSurveyShow = () => {
                            fullWidth/>
                 <TextField source="description"
                            fullWidth/>
+                <UIMapField width="100%" height="400px"/>
                 <ArrayField source="questions">
                     <Datagrid bulkActionButtons={false}
                               expand={<Answers />}>
