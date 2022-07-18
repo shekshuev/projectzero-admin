@@ -14,6 +14,8 @@ import WResearchCreate from "./components/widgets/forms/WResearchCreate";
 import WResearchEdit from "./components/widgets/forms/WResearchEdit";
 import WSurveyList from "./components/widgets/lists/WSurveyList";
 import WSurveyShow from "./components/widgets/forms/WSurveyShow";
+import WSurveyCreate from "./components/widgets/forms/WSurveyCreate";
+import WSurveyEdit from "./components/widgets/forms/WSurveyEdit";
 import GroupIcon from '@mui/icons-material/Group';
 import PollIcon from '@mui/icons-material/Poll';
 import BallotIcon from '@mui/icons-material/Ballot';
@@ -48,6 +50,8 @@ const App = () => (
         <Resource name="surveys"
                   list={ WSurveyList }
                   show={ WSurveyShow }
+                  create={ WSurveyCreate }
+                  edit={ WSurveyEdit }
                   icon={ BallotIcon }/>
     </Admin>
 );
