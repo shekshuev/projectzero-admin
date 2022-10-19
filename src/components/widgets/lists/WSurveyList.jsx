@@ -7,7 +7,7 @@ const WSurveyList = () => (
                 fontWeight: "bold"
             }
         }}
-                  rowClick="show">
+                  rowClick="show" bulkActionButtons={false}>
             <TextField source="id" />
             <TextField source="title" />
             <DateField source="beginDate" />

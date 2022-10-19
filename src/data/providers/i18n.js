@@ -22,16 +22,6 @@ const en = {
                 admin: "Admin"
             }
         },
-        researches: {
-            name: "Research |||| Researches",
-            fields: {
-                id: "ID",
-                title: "Title",
-                description: "Description",
-                beginDate: "Begin date",
-                endDate: "End date"
-            }
-        },
         surveys: {
             name: "Survey |||| Surveys",
             fields: {
@@ -78,16 +68,6 @@ const ru = {
             roles: {
                 interviewer: "Интервьюер",
                 admin: "Администратор"
-            }
-        },
-        researches: {
-            name: "Исследование |||| Исследования",
-            fields: {
-                id: "ID",
-                title: "Название",
-                description: "Описание",
-                beginDate: "Дата начала",
-                endDate: "Дата окончания"
             }
         },
         surveys: {

@@ -8,10 +8,6 @@ import WAccountList from "./components/widgets/lists/WAccountList";
 import WAccountShow from "./components/widgets/forms/WAccountShow";
 import WAccountCreate from "./components/widgets/forms/WAccountCreate";
 import WAccountEdit from "./components/widgets/forms/WAccountEdit";
-import WResearchList from "./components/widgets/lists/WResearchList";
-import WResearchShow from "./components/widgets/forms/WResearchShow";
-import WResearchCreate from "./components/widgets/forms/WResearchCreate";
-import WResearchEdit from "./components/widgets/forms/WResearchEdit";
 import WSurveyList from "./components/widgets/lists/WSurveyList";
 import WSurveyShow from "./components/widgets/forms/WSurveyShow";
 import WSurveyCreate from "./components/widgets/forms/WSurveyCreate";
@@ -41,12 +37,6 @@ const App = () => (
                   create={ WAccountCreate }
                   edit={ WAccountEdit }
                   icon={ GroupIcon } />
-        <Resource name="researches"
-                  list={ WResearchList }
-                  show={ WResearchShow }
-                  create={ WResearchCreate }
-                  edit={ WResearchEdit }
-                  icon={ PollIcon } />
         <Resource name="surveys"
                   list={ WSurveyList }
                   show={ WSurveyShow }

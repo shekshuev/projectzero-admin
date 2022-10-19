@@ -7,7 +7,7 @@ const WAccountList = () => (
                           fontWeight: "bold"
                       }
                   }}
-                  rowClick="show">
+                  rowClick="show" bulkActionButtons={false}>
             <TextField source="id" />
             <TextField source="userName" />
             <TextField source="firstName" />
