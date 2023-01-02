@@ -22,6 +22,31 @@ const en = {
                 admin: "Admin"
             }
         },
+        forms: {
+            name: "Form |||| Forms",
+            fields: {
+                id: "ID",
+                title: "Title",
+                questions_count: "Questions count",
+                questions: "Questions",
+                question: {
+                    id: "ID",
+                    title: "Title",
+                    type: "Type",
+                    answers: "Answers",
+                    answer: {
+                        id: "ID",
+                        text: "Text",
+                        code: "Answer code"
+                    }
+                }
+            },
+            questionTypes: {
+                single: "Single answer",
+                multiple: "Multiple answer",
+                open: "Open"
+            }
+        },
         surveys: {
             name: "Survey |||| Surveys",
             fields: {
@@ -70,6 +95,29 @@ const ru = {
                 admin: "Администратор"
             }
         },
+        forms: {
+            name: "Бланк |||| Бланки",
+            fields: {
+                id: "ID",
+                title: "Название",
+                questions_count: "Количество вопросов",
+                questions: "Вопросы",
+                question: {
+                    title: "Текст вопроса",
+                    type: "Тип вопроса",
+                    answers: "Ответы",
+                    answer: {
+                        text: "Текст ответа",
+                        code: "Код ответа"
+                    }
+                }
+            },
+            questionTypes: {
+                single: "Один ответ",
+                multiple: "Несколько ответов",
+                open: "Открытый"
+            }
+        },
         surveys: {
             name: "Опрос |||| Опросы",
             fields: {
@@ -97,6 +145,12 @@ const ru = {
         passwordMismatched: "Пароли не совпадают"
     }
 };
+
+Reflect.set(ru, "ra.action.move_down", "Вниз");
+Reflect.set(ru, "ra.action.move_up", "Вверх");
+Reflect.set(ru, "ra.action.clear_array_input", "Очистить список");
+Reflect.set(ru, "ra.message.clear_array_input", "Вы действительно хотите очистить весь список?");
+Reflect.set(ru, "ra.configurable.customize", "Настроить");
 
 const translations = { en, ru };
 

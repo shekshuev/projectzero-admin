@@ -1,6 +1,6 @@
-import { Datagrid, TextField, List, DeleteWithConfirmButton, EditButton } from "react-admin";
+import { Datagrid, TextField, List, DeleteWithConfirmButton, EditButton, FunctionField } from "react-admin";
 
-const WAccountList = () => (
+const WFormsList = () => (
     <List exporter={false}>
         <Datagrid
             sx={{
@@ -11,14 +11,12 @@ const WAccountList = () => (
             bulkActionButtons={false}
             rowClick="show">
             <TextField source="id" />
-            <TextField source="userName" />
-            <TextField source="firstName" />
-            <TextField source="lastName" />
-            <TextField source="role" />
+            <TextField source="title" />
+            <FunctionField label="questions_count" render={record => record?.questions?.length || 0} />
             <EditButton />
             <DeleteWithConfirmButton />
         </Datagrid>
     </List>
 );
 
-export default WAccountList;
+export default WFormsList;
