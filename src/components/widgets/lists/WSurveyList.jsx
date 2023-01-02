@@ -1,13 +1,15 @@
-import { Datagrid, TextField, DateField, List, DeleteWithConfirmButton, EditButton } from 'react-admin';
+import { Datagrid, TextField, DateField, List, DeleteWithConfirmButton, EditButton } from "react-admin";
 
 const WSurveyList = () => (
     <List exporter={false}>
-        <Datagrid sx={{
-            "& .RaDatagrid-headerCell": {
-                fontWeight: "bold"
-            }
-        }}
-                  rowClick="show">
+        <Datagrid
+            sx={{
+                "& .RaDatagrid-headerCell": {
+                    fontWeight: "bold"
+                }
+            }}
+            bulkActionButtons={false}
+            rowClick="show">
             <TextField source="id" />
             <TextField source="title" />
             <DateField source="beginDate" />

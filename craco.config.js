@@ -8,7 +8,8 @@ module.exports = {
             "@components": resolvePath("./src/components"),
             "@data": resolvePath("./src/data"),
             "@hooks": resolvePath("./src/hooks"),
-            "@services": resolvePath("./src/services")
+            "@services": resolvePath("./src/services"),
+            "@styles": resolvePath("./src/styles")
         }
     }
 };

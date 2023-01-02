@@ -19,6 +19,14 @@ class BaseDataProvider {
         return { data: json };
     }
 
+    async getMany(resource, params) {
+        const promises = [];
+        for (const id of params.ids) {
+            promises.push(httpClient(`${API_URL}/${resource}/${id}`));
+        }
+        return Promise.all(promises).then(results => ({ data: results.map(r => r.json) }));
+    }
+
     async update(resource, params) {
         const { json } = await httpClient(`${API_URL}/${resource}/${params.id}`, {
             method: "PUT",

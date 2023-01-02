@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Admin, Resource, combineDataProviders, Layout } from "react-admin";
-import BaseDataProvider from "@data/providers/base";
 import AccountDataProvider from "@data/providers/account";
 import FormDataProvider from "@data/providers/form";
+import SurveyDataProvider from "@data/providers/survey";
 import authProvider from "@data/providers/auth";
 import { i18nProvider } from "@data/providers/i18n";
 import { UIAppBar } from "@components/ui/UIAppBar";
@@ -30,8 +30,10 @@ const dataProvider = combineDataProviders(resource => {
             return new AccountDataProvider();
         case "forms":
             return new FormDataProvider();
+        case "surveys":
+            return new SurveyDataProvider();
         default:
-            return new BaseDataProvider();
+            throw new Error(`Not implemented data provider: ${resource}`);
     }
 });
 
