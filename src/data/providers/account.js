@@ -1,9 +1,10 @@
-import { stringify } from 'query-string';
-import { API_URL } from "../common";
-import httpClient from "../../services/http";
+import { stringify } from "query-string";
+import { API_URL } from "@data/common";
+import httpClient from "@services/http";
+import BaseDataProvider from "@data/providers/base";
 
-const accountProvider =  {
-    getList: (resource, params) => {
+class AccountDataProvider extends BaseDataProvider {
+    getList(resource, params) {
         const { page, perPage } = params.pagination;
         const query = {
             offset: (page - 1) * perPage,
@@ -11,10 +12,10 @@ const accountProvider =  {
         };
         const url = `${API_URL}/${resource}?${stringify(query)}`;
         return httpClient(url).then(({ headers, json }) => ({
-            data: json.items,
-            total: json.total,
+            data: json.accounts,
+            total: json.total
         }));
-    },
-};
+    }
+}
 
-export default accountProvider;
+export default AccountDataProvider;
