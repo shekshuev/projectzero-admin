@@ -1,4 +1,4 @@
-import { Datagrid, TextField, DateField, List, DeleteWithConfirmButton, EditButton } from "react-admin";
+import { Datagrid, TextField, DateField, List, DeleteWithConfirmButton, EditButton, NumberField } from "react-admin";
 
 const WSurveyList = () => (
     <List exporter={false}>
@@ -14,6 +14,7 @@ const WSurveyList = () => (
             <TextField source="title" />
             <DateField source="beginDate" />
             <DateField source="endDate" />
+            <NumberField source="formsCount" />
             <EditButton />
             <DeleteWithConfirmButton />
         </Datagrid>

@@ -1,4 +1,4 @@
-import { Form, SaveButton, TextInput, ReferenceInput, AutocompleteInput } from "react-admin";
+import { Form, SaveButton, TextInput, ReferenceInput, AutocompleteInput, NumberInput } from "react-admin";
 import { Grid } from "@mui/material";
 import UIMapInput from "@components/ui/inputs/UIMapInput";
 import UIDateTimeInput from "@components/ui/inputs/UIDateTimeInput";
@@ -12,8 +12,11 @@ const WSurveyEditable = () => (
             <Grid item xs={12} md={6}>
                 <UIDateTimeInput source="endDate" variant="outlined" required fullWidth />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} md={6}>
                 <TextInput source="title" variant="outlined" required fullWidth />
+            </Grid>
+            <Grid item xs={12} md={6}>
+                <NumberInput source="formsCount" variant="outlined" required fullWidth />
             </Grid>
             <Grid item xs={12}>
                 <TextInput

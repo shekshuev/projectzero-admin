@@ -55,7 +55,8 @@ const en = {
                 beginDate: "Begin date",
                 endDate: "End date",
                 form: "Form",
-                area: "Area"
+                area: "Area",
+                formsCount: "Forms count"
             }
         },
         results: {
@@ -146,7 +147,8 @@ const ru = {
                 beginDate: "Дата начала",
                 endDate: "Дата окончания",
                 form: "Бланк",
-                area: "Место проведения опроса"
+                area: "Место проведения опроса",
+                formsCount: "Количество анкет"
             }
         },
         results: {
