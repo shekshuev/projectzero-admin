@@ -17,7 +17,10 @@ const Answers = () => {
     const record = useRecordContext();
     record.question.answers = record.question.answers.map(answer => {
         if (record.question.type === "open") {
-            return answer;
+            return {
+                ...answer,
+                inputText: record?.selectedAnswer?.inputText
+            };
         } else {
             return {
                 ...answer,
