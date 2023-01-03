@@ -32,6 +32,9 @@ const UIMapField = ({ source }) => {
                 const centroid = turf.centroid(polygon);
                 setCenter([centroid.geometry.coordinates[1], centroid.geometry.coordinates[0]]);
                 setZoom(11);
+            } else if (value?.type === "Feature" && value?.geometry?.type === "Point") {
+                setCenter([value?.geometry.coordinates[1], value?.geometry.coordinates[0]]);
+                setZoom(15);
             }
         }
     }, [record, source]);

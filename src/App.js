@@ -3,6 +3,7 @@ import { Admin, Resource, combineDataProviders, Layout } from "react-admin";
 import AccountDataProvider from "@data/providers/account";
 import FormDataProvider from "@data/providers/form";
 import SurveyDataProvider from "@data/providers/survey";
+import ResultDataProvider from "@data/providers/result";
 import authProvider from "@data/providers/auth";
 import { i18nProvider } from "@data/providers/i18n";
 import { UIAppBar } from "@components/ui/UIAppBar";
@@ -18,9 +19,12 @@ import WSurveyList from "@components/widgets/lists/WSurveyList";
 import WSurveyShow from "@components/widgets/forms/WSurveyShow";
 import WSurveyCreate from "@components/widgets/forms/WSurveyCreate";
 import WSurveyEdit from "@components/widgets/forms/WSurveyEdit";
+import WResultsList from "@components/widgets/lists/WResultList";
+import WResultShow from "@components/widgets/forms/WResultShow";
 import GroupIcon from "@mui/icons-material/Group";
 import PollIcon from "@mui/icons-material/Poll";
 import BallotIcon from "@mui/icons-material/Ballot";
+import GradingIcon from "@mui/icons-material/Grading";
 
 const UILayout = props => <Layout {...props} appBar={UIAppBar} />;
 
@@ -32,6 +36,8 @@ const dataProvider = combineDataProviders(resource => {
             return new FormDataProvider();
         case "surveys":
             return new SurveyDataProvider();
+        case "results":
+            return new ResultDataProvider();
         default:
             throw new Error(`Not implemented data provider: ${resource}`);
     }
@@ -68,6 +74,7 @@ const App = () => (
             edit={WSurveyEdit}
             icon={PollIcon}
         />
+        <Resource name="results" list={WResultsList} show={WResultShow} icon={GradingIcon} />
     </Admin>
 );
 

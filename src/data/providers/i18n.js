@@ -30,12 +30,11 @@ const en = {
                 questions_count: "Questions count",
                 questions: "Questions",
                 question: {
-                    id: "ID",
                     title: "Title",
                     type: "Type",
                     answers: "Answers",
+                    required: "Required",
                     answer: {
-                        id: "ID",
                         text: "Text",
                         code: "Answer code"
                     }
@@ -55,7 +54,36 @@ const en = {
                 description: "Description",
                 beginDate: "Begin date",
                 endDate: "End date",
-                form: "Form"
+                form: "Form",
+                area: "Area"
+            }
+        },
+        results: {
+            name: "Result |||| Results",
+            fields: {
+                id: "ID",
+                beginDate: "Begin date",
+                endDate: "End date",
+                answers_count: "Answers",
+                completed: "Completed",
+                survey: "Survey",
+                account: "Account",
+                point: "Geolocation of interviewer",
+                questions: "Questions",
+                question: {
+                    beginDate: "Question begin time",
+                    endDate: "Question end time",
+                    title: "Title",
+                    type: "Type",
+                    answers: "Answers",
+                    required: "Required",
+                    answer: {
+                        text: "Text",
+                        code: "Answer code",
+                        selected: "Selected",
+                        inputText: "Respondent answer text"
+                    }
+                }
             }
         }
     },
@@ -96,6 +124,7 @@ const ru = {
                     title: "Текст вопроса",
                     type: "Тип вопроса",
                     answers: "Ответы",
+                    required: "Обязательный",
                     answer: {
                         text: "Текст ответа",
                         code: "Код ответа"
@@ -116,7 +145,38 @@ const ru = {
                 description: "Описание",
                 beginDate: "Дата начала",
                 endDate: "Дата окончания",
-                form: "Бланк"
+                form: "Бланк",
+                area: "Место проведения опроса"
+            }
+        },
+        results: {
+            name: "Результат |||| Результаты",
+            fields: {
+                id: "ID",
+                beginDate: "Дата начала",
+                endDate: "Дата окончания",
+                answers_count: "Ответы",
+                completed: "Завершен",
+                survey: "Опрос",
+                account: "Учетная запись",
+                point: "Местоположение интервьюера",
+                questions: "Вопросы",
+                question: {
+                    id: "ID",
+                    beginDate: "Время начала вопроса",
+                    endDate: "Время завершения вопроса",
+                    title: "Текст вопроса",
+                    type: "Тип вопроса",
+                    answers: "Ответы",
+                    required: "Обязательный",
+                    answer: {
+                        id: "ID",
+                        text: "Текст ответа",
+                        code: "Код ответа",
+                        selected: "Выбран",
+                        inputText: "Текст ответа респондента"
+                    }
+                }
             }
         }
     },

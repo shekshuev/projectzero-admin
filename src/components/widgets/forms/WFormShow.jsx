@@ -3,8 +3,8 @@ import { Show, TextField, SimpleShowLayout, ArrayField, Datagrid, BooleanField, 
 const Answers = () => (
     <ArrayField source="answers">
         <Datagrid bulkActionButtons={false}>
-            <TextField source="text" label="resources.surveys.fields.question.answer.text" />
-            <TextField source="code" label="resources.surveys.fields.question.answer.code" />
+            <TextField source="text" label="resources.forms.fields.question.answer.text" />
+            <TextField source="code" label="resources.forms.fields.question.answer.code" />
         </Datagrid>
     </ArrayField>
 );
@@ -27,7 +27,7 @@ const WFormShow = () => (
                             { id: "open", name: "resources.forms.questionTypes.open" }
                         ]}
                     />
-                    <BooleanField source="required" fullWidth />
+                    <BooleanField source="required" label="resources.forms.fields.question.required" fullWidth />
                 </Datagrid>
             </ArrayField>
         </SimpleShowLayout>
