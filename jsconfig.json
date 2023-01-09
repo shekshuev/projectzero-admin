@@ -6,7 +6,8 @@
             "@data/*": ["data/*"],
             "@hooks/*": ["hooks/*"],
             "@services/*": ["services/*"],
-            "@styles/*": ["styles/*"]
+            "@styles/*": ["styles/*"],
+            "@utils/*": ["utils/*"]
         }
     },
     "include": ["src"],

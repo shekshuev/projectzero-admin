@@ -9,7 +9,8 @@ module.exports = {
             "@data": resolvePath("./src/data"),
             "@hooks": resolvePath("./src/hooks"),
             "@services": resolvePath("./src/services"),
-            "@styles": resolvePath("./src/styles")
+            "@styles": resolvePath("./src/styles"),
+            "@utils": resolvePath("./src/utils")
         }
     }
 };
