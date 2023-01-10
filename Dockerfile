@@ -1,4 +1,5 @@
 FROM node:16-alpine
+ENV GENERATE_SOURCEMAP=false
 WORKDIR /app
 COPY package.json .
 RUN npm install
