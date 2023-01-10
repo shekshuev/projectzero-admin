@@ -3,6 +3,7 @@ import { EditControl } from "react-leaflet-draw";
 import { useInput } from "react-admin";
 import { useEffect, useState } from "react";
 import hash from "object-hash";
+import useStateRef from "react-usestateref";
 
 import * as turf from "@turf/turf";
 
@@ -15,7 +16,7 @@ const UIMapInput = props => {
 
     const [center, setCenter] = useState([0, 0]);
     const [zoom, setZoom] = useState(2);
-    const [state, setState] = useState();
+    const [state, setState, ref] = useStateRef();
 
     const ChangeMapView = ({ coords, zoom }) => {
         const map = useMap();
@@ -26,11 +27,11 @@ const UIMapInput = props => {
     const onCreated = data => {
         const geoJSON = data.layer.toGeoJSON();
         if (
-            state?.type === "FeatureCollection" &&
-            Object.prototype.toString.apply(state?.features) === "[object Array]" &&
+            ref.current?.type === "FeatureCollection" &&
+            Object.prototype.toString.apply(ref.current?.features) === "[object Array]" &&
             geoJSON.geometry.type === "Polygon"
         ) {
-            const newState = { ...state };
+            const newState = { ...ref.current };
             newState.features.push(geoJSON);
             setState(newState);
             onChange(newState);
@@ -38,9 +39,9 @@ const UIMapInput = props => {
     };
 
     const onDeleted = () => {
-        state.features.pop();
-        onChange(state);
-        setState(state);
+        ref.current.features.pop();
+        onChange(ref.current);
+        setState(ref.current);
     };
 
     useEffect(() => {
@@ -73,7 +74,6 @@ const UIMapInput = props => {
 
     return (
         <MapContainer
-            key={Math.random()}
             center={center}
             zoom={zoom}
             scrollWheelZoom={false}
