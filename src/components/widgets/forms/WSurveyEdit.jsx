@@ -2,7 +2,7 @@ import { Edit } from "react-admin";
 import WSurveyEditable from "./WSurveyEditable";
 
 const WSurveyEdit = () => (
-    <Edit>
+    <Edit mutationMode="pessimistic">
         <WSurveyEditable />
     </Edit>
 );

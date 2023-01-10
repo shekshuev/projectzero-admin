@@ -3,7 +3,7 @@ import WAccountEditable from "@components/widgets/forms/WAccountEditable";
 
 const WAccountCreate = () => (
     <Create>
-        <WAccountEditable />
+        <WAccountEditable isCreate />
     </Create>
 );
 
