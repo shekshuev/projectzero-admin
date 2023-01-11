@@ -71,7 +71,7 @@ const FilterContent = () => {
                     required
                     onChange={onSurveySelected}
                     fullWidth
-                    filterToQuery={searchText => ({ title: `%${searchText}%` })}
+                    filterToQuery={searchText => ({ title: `${searchText}` })}
                     helperText={false}
                 />
             </ReferenceInput>
@@ -82,7 +82,7 @@ const FilterContent = () => {
                     required
                     onChange={onAccountSelected}
                     fullWidth
-                    filterToQuery={searchText => ({ name: `%${searchText}%` })}
+                    filterToQuery={searchText => ({ name: `${searchText}` })}
                     helperText={false}
                 />
             </ReferenceInput>
