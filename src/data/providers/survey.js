@@ -11,8 +11,8 @@ class SurveyDataProvider extends BaseDataProvider {
             ...filter,
             offset: (page - 1) * perPage,
             count: perPage,
-            sort_direction: sort?.order,
-            sort_by: sort?.field?.split(".").shift()
+            sortDirection: sort?.order,
+            sortBy: sort?.field?.split(".").shift()
         })?.toString();
         return httpClient(url).then(({ json }) => ({
             data: json.surveys,
