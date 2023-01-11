@@ -12,7 +12,7 @@ const WFormsList = () => (
             rowClick="show">
             <TextField source="id" />
             <TextField source="title" />
-            <FunctionField label="questions_count" render={record => record?.questions?.length || 0} />
+            <FunctionField source="questionsCount" render={record => record?.questions?.length || 0} />
             <EditButton />
             <DeleteWithConfirmButton />
         </Datagrid>

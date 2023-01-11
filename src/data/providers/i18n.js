@@ -27,7 +27,7 @@ const en = {
             fields: {
                 id: "ID",
                 title: "Title",
-                questions_count: "Questions count",
+                questionsCount: "Questions count",
                 questions: "Questions",
                 question: {
                     title: "Title",
@@ -68,7 +68,7 @@ const en = {
                 answers_count: "Answers",
                 completed: "Completed",
                 survey: "Survey",
-                account: "Account",
+                account: "Interviewer",
                 point: "Geolocation of interviewer",
                 questions: "Questions",
                 question: {
@@ -119,7 +119,7 @@ const ru = {
             fields: {
                 id: "ID",
                 title: "Название",
-                questions_count: "Количество вопросов",
+                questionsCount: "Количество вопросов",
                 questions: "Вопросы",
                 question: {
                     title: "Текст вопроса",
@@ -160,7 +160,7 @@ const ru = {
                 answers_count: "Ответы",
                 completed: "Завершен",
                 survey: "Опрос",
-                account: "Учетная запись",
+                account: "Интервьюер",
                 point: "Местоположение интервьюера",
                 questions: "Вопросы",
                 question: {

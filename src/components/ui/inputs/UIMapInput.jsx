@@ -63,6 +63,7 @@ const UIMapInput = props => {
             setCenter([centroid.geometry.coordinates[1], centroid.geometry.coordinates[0]]);
             setZoom(11);
         }
+        // eslint-disable-next-line
     }, [value]);
 
     L.EditToolbar.Delete.include({

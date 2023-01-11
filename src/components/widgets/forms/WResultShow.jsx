@@ -19,13 +19,20 @@ const Answers = () => {
         if (record.question.type === "open") {
             return {
                 ...answer,
-                inputText: record?.selectedAnswer?.inputText
+                inputText: record?.selectedAnswer
             };
-        } else {
+        } else if (record.question.type === "single") {
             return {
                 ...answer,
-                selected: record?.selectedAnswer?.code === answer.code
+                selected: record?.selectedAnswer === answer.code
             };
+        } else if (record.question.type === "multiple") {
+            return {
+                ...answer,
+                selected: record?.selectedAnswer?.includes?.(answer.code)
+            };
+        } else {
+            return answer;
         }
     });
     return (
@@ -52,6 +59,14 @@ const WResultShow = () => (
             <DateField source="beginDate" fullWidth showTime />
             <DateField source="endDate" fullWidth showTime />
             <BooleanField source="completed" />
+            <ReferenceField
+                label="resources.results.fields.account"
+                source="accountId"
+                reference="accounts"
+                link="show">
+                <TextField source="userName" />
+            </ReferenceField>
+            <UIMapField width="100%" height="400px" source="point" />
             <ReferenceField label="resources.results.fields.survey" source="surveyId" reference="surveys" link="show">
                 <TextField source="title" />
             </ReferenceField>
@@ -72,14 +87,6 @@ const WResultShow = () => (
                     <BooleanField source="question.required" label="resources.results.fields.question.required" />
                 </Datagrid>
             </ArrayField>
-            <ReferenceField
-                label="resources.results.fields.account"
-                source="accountId"
-                reference="accounts"
-                link="show">
-                <TextField source="userName" />
-            </ReferenceField>
-            <UIMapField width="100%" height="400px" source="point" />
         </SimpleShowLayout>
     </Show>
 );
