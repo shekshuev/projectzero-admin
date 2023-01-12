@@ -17,6 +17,8 @@ import { useForm, FormProvider } from "react-hook-form";
 import UIDateTimeInput from "@components/ui/inputs/UIDateTimeInput";
 import { debounce } from "lodash";
 import { Numbers } from "@mui/icons-material";
+import { jsonToFile } from "utils/utils";
+import * as moment from "moment";
 
 const FilterContent = () => {
     const { filterValues, setFilters } = useListContext();
@@ -113,37 +115,44 @@ const FilterSidebar = () => (
     </Box>
 );
 
-const WResultsList = () => (
-    <List exporter={false} aside={<FilterSidebar />}>
-        <Datagrid
-            sx={{
-                "& .RaDatagrid-headerCell": {
-                    fontWeight: "bold"
-                }
-            }}
-            bulkActionButtons={false}
-            rowClick="show">
-            <TextField source="id" />
-            <DateField source="beginDate" showTime />
-            <DateField source="endDate" showTime />
-            <BooleanField source="completed" />
-            <FunctionField
-                label="resources.results.fields.answers_count"
-                render={record => record?.questions?.length || 0}
-            />
-            <ReferenceField label="resources.results.fields.survey" source="surveyId" reference="surveys" link="show">
-                <TextField source="title" />
-            </ReferenceField>
-            <ReferenceField
-                label="resources.results.fields.account"
-                source="accountId"
-                reference="accounts"
-                link="show">
-                <TextField source="userName" />
-            </ReferenceField>
-            <DeleteWithConfirmButton />
-        </Datagrid>
-    </List>
-);
+const WResultsList = () => {
+    const exporter = data => jsonToFile(data, `export-${moment().format("DD-MM-YYYY-HH-mm-ss")}.json`);
+    return (
+        <List exporter={exporter} aside={<FilterSidebar />}>
+            <Datagrid
+                sx={{
+                    "& .RaDatagrid-headerCell": {
+                        fontWeight: "bold"
+                    }
+                }}
+                bulkActionButtons={false}
+                rowClick="show">
+                <TextField source="id" />
+                <DateField source="beginDate" showTime />
+                <DateField source="endDate" showTime />
+                <BooleanField source="completed" />
+                <FunctionField
+                    label="resources.results.fields.answers_count"
+                    render={record => record?.questions?.length || 0}
+                />
+                <ReferenceField
+                    label="resources.results.fields.survey"
+                    source="surveyId"
+                    reference="surveys"
+                    link="show">
+                    <TextField source="title" />
+                </ReferenceField>
+                <ReferenceField
+                    label="resources.results.fields.account"
+                    source="accountId"
+                    reference="accounts"
+                    link="show">
+                    <TextField source="userName" />
+                </ReferenceField>
+                <DeleteWithConfirmButton />
+            </Datagrid>
+        </List>
+    );
+};
 
 export default WResultsList;
