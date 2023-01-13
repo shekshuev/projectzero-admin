@@ -1,6 +1,6 @@
 import { Datagrid, TextField, List, DeleteWithConfirmButton, EditButton } from "react-admin";
 
-const WAccountList = () => (
+const WAccountList = ({ showEdit }) => (
     <List exporter={false}>
         <Datagrid
             sx={{
@@ -15,8 +15,8 @@ const WAccountList = () => (
             <TextField source="firstName" />
             <TextField source="lastName" />
             <TextField source="role" />
-            <EditButton />
-            <DeleteWithConfirmButton />
+            {showEdit && <EditButton />}
+            {showEdit && <DeleteWithConfirmButton />}
         </Datagrid>
     </List>
 );

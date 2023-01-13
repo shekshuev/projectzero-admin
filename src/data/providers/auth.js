@@ -1,4 +1,5 @@
 import { API_URL } from "../common";
+import jwt_decode from "jwt-decode";
 
 const authProvider = {
     login: ({ username, password }) => {
@@ -36,12 +37,27 @@ const authProvider = {
         return Promise.resolve();
     },
     checkAuth: () => (localStorage.getItem("auth") ? Promise.resolve() : Promise.reject()),
-    getIdentity: () =>
-        Promise.resolve({
-            id: "user",
-            fullName: "John Doe"
-        }),
-    getPermissions: () => Promise.resolve("")
+    getIdentity: () => {
+        const token = JSON.parse(localStorage.getItem("auth"))?.accessToken;
+        if (token) {
+            const accountInfo = jwt_decode(token);
+            return Promise.resolve({
+                id: accountInfo.id,
+                fullName: accountInfo.username
+            });
+        } else {
+            return Promise.reject("Wrong token");
+        }
+    },
+    getPermissions: () => {
+        const token = JSON.parse(localStorage.getItem("auth"))?.accessToken;
+        if (token) {
+            const accountInfo = jwt_decode(token);
+            return Promise.resolve(accountInfo.role);
+        } else {
+            return Promise.reject("Wrong token");
+        }
+    }
 };
 
 export default authProvider;

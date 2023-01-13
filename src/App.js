@@ -50,31 +50,35 @@ const App = () => (
         i18nProvider={i18nProvider}
         layout={UILayout}
         requireAuth>
-        <Resource
-            name="accounts"
-            list={WAccountList}
-            show={WAccountShow}
-            create={WAccountCreate}
-            edit={WAccountEdit}
-            icon={GroupIcon}
-        />
-        <Resource
-            name="forms"
-            list={WFormsList}
-            show={WFormShow}
-            create={WFormCreate}
-            edit={WFormEdit}
-            icon={BallotIcon}
-        />
-        <Resource
-            name="surveys"
-            list={WSurveyList}
-            show={WSurveyShow}
-            create={WSurveyCreate}
-            edit={WSurveyEdit}
-            icon={PollIcon}
-        />
-        <Resource name="results" list={WResultsList} show={WResultShow} icon={GradingIcon} />
+        {permissions => (
+            <>
+                <Resource
+                    name="accounts"
+                    list={() => <WAccountList showEdit={permissions === "root"} />}
+                    show={WAccountShow}
+                    create={permissions === "root" && WAccountCreate}
+                    edit={permissions === "root" && WAccountEdit}
+                    icon={GroupIcon}
+                />
+                <Resource
+                    name="forms"
+                    list={WFormsList}
+                    show={WFormShow}
+                    create={WFormCreate}
+                    edit={WFormEdit}
+                    icon={BallotIcon}
+                />
+                <Resource
+                    name="surveys"
+                    list={WSurveyList}
+                    show={WSurveyShow}
+                    create={WSurveyCreate}
+                    edit={WSurveyEdit}
+                    icon={PollIcon}
+                />
+                <Resource name="results" list={WResultsList} show={WResultShow} icon={GradingIcon} />
+            </>
+        )}
     </Admin>
 );
 
