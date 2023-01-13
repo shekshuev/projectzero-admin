@@ -31,7 +31,8 @@ const WAccountEditable = ({ isCreate = false }) => (
                     defaultValue="interviewer"
                     choices={[
                         { id: "interviewer", name: "resources.accounts.roles.interviewer" },
-                        { id: "admin", name: "resources.accounts.roles.admin" }
+                        { id: "admin", name: "resources.accounts.roles.admin" },
+                        { id: "root", name: "resources.accounts.roles.root" }
                     ]}
                     validate={[required()]}
                     variant="outlined"

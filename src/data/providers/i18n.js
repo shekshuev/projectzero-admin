@@ -19,7 +19,8 @@ const en = {
             },
             roles: {
                 interviewer: "Interviewer",
-                admin: "Admin"
+                admin: "Admin",
+                root: "Root"
             }
         },
         forms: {
@@ -111,7 +112,8 @@ const ru = {
             },
             roles: {
                 interviewer: "Интервьюер",
-                admin: "Администратор"
+                admin: "Администратор",
+                root: "Главный администратор"
             }
         },
         forms: {
