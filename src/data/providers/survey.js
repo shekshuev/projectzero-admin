@@ -25,10 +25,7 @@ class SurveyDataProvider extends BaseDataProvider {
         url.search = new URLSearchParams({
             id
         })?.toString();
-        return httpClient(url).then(({ json }) => ({
-            data: json.surveys,
-            total: json.total
-        }));
+        return httpClient(url).then(({ json }) => json);
     }
 }
 
