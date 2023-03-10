@@ -9,11 +9,14 @@ import {
     Datagrid,
     SelectField,
     useRecordContext,
-    RecordContextProvider
+    RecordContextProvider,
+    useTranslate
 } from "react-admin";
+import { Grid, Typography } from "@mui/material";
 import UIMapField from "@components/ui/fields/UIMapField";
 
 const Answers = () => {
+    const translate = useTranslate();
     const record = useRecordContext();
     record.question.answers = record.question.answers.map(answer => {
         if (record.question.type === "open") {
@@ -37,6 +40,29 @@ const Answers = () => {
     });
     return (
         <RecordContextProvider value={record}>
+            <Grid container spacing={2}>
+                <Grid item xs={6} md={4}>
+                    <Typography variant="caption" display="block">
+                        {translate("resources.results.fields.question.beginDate")}
+                    </Typography>
+                    {record?.beginDates?.map((item, i) => (
+                        <RecordContextProvider value={{ date: item }} key={i}>
+                            <DateField source="date" showTime component="div" />
+                        </RecordContextProvider>
+                    ))}
+                </Grid>
+                <Grid item xs={6} md={4}>
+                    <Typography variant="caption" display="block">
+                        {translate("resources.results.fields.question.endDate")}
+                    </Typography>
+                    {record?.endDates?.map((item, i) => (
+                        <RecordContextProvider value={{ date: item }} key={i}>
+                            <DateField source="date" showTime component="div" />
+                        </RecordContextProvider>
+                    ))}
+                </Grid>
+            </Grid>
+
             <ArrayField source="question.answers">
                 <Datagrid bulkActionButtons={false}>
                     <TextField source="text" label="resources.results.fields.question.answer.text" />
@@ -72,8 +98,6 @@ const WResultShow = () => (
             </ReferenceField>
             <ArrayField source="questions">
                 <Datagrid bulkActionButtons={false} expand={<Answers />}>
-                    <DateField label="resources.results.fields.question.beginDate" source="beginDate" showTime />
-                    <DateField label="resources.results.fields.question.endDate" source="endDate" showTime />
                     <TextField source="question.title" label="resources.results.fields.question.title" />
                     <SelectField
                         source="question.type"
