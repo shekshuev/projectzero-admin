@@ -1,4 +1,13 @@
-import { Show, TextField, SimpleShowLayout, ArrayField, Datagrid, BooleanField, SelectField } from "react-admin";
+import {
+    Show,
+    TextField,
+    SimpleShowLayout,
+    ArrayField,
+    Datagrid,
+    BooleanField,
+    SelectField,
+    DateField
+} from "react-admin";
 
 const Answers = () => (
     <ArrayField source="answers">
@@ -30,6 +39,8 @@ const WFormShow = () => (
                     <BooleanField source="required" label="resources.forms.fields.question.required" fullWidth />
                 </Datagrid>
             </ArrayField>
+            <DateField source="createdAt" showTime fullWidth />
+            <DateField source="updatedAt" showTime fullWidth />
         </SimpleShowLayout>
     </Show>
 );

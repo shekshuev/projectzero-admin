@@ -14,6 +14,8 @@ const WSurveyShow = () => (
                 <TextField source="title" />
             </ReferenceField>
             <UIMapField width="100%" height="400px" source="area" />
+            <DateField source="createdAt" showTime fullWidth />
+            <DateField source="updatedAt" showTime fullWidth />
         </SimpleShowLayout>
     </Show>
 );

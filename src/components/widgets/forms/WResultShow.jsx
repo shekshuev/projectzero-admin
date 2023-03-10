@@ -87,6 +87,8 @@ const WResultShow = () => (
                     <BooleanField source="question.required" label="resources.results.fields.question.required" />
                 </Datagrid>
             </ArrayField>
+            <DateField source="createdAt" showTime fullWidth />
+            <DateField source="updatedAt" showTime fullWidth />
         </SimpleShowLayout>
     </Show>
 );

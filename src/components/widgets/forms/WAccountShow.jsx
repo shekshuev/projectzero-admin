@@ -1,4 +1,4 @@
-import { Show, TextField, SimpleShowLayout } from "react-admin";
+import { Show, TextField, SimpleShowLayout, DateField } from "react-admin";
 
 const WAccountShow = () => (
     <Show>
@@ -8,6 +8,8 @@ const WAccountShow = () => (
             <TextField source="firstName" fullWidth />
             <TextField source="lastName" fullWidth />
             <TextField source="role" fullWidth />
+            <DateField source="createdAt" showTime fullWidth />
+            <DateField source="updatedAt" showTime fullWidth />
         </SimpleShowLayout>
     </Show>
 );

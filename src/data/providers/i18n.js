@@ -15,7 +15,9 @@ const en = {
                 firstName: "First name",
                 middleName: "Middle name",
                 lastName: "Last name",
-                role: "Role"
+                role: "Role",
+                createdAt: "Created at",
+                updatedAt: "Updated at"
             },
             roles: {
                 interviewer: "Interviewer",
@@ -39,7 +41,9 @@ const en = {
                         text: "Text",
                         code: "Answer code"
                     }
-                }
+                },
+                createdAt: "Created at",
+                updatedAt: "Updated at"
             },
             questionTypes: {
                 single: "Single answer",
@@ -57,7 +61,9 @@ const en = {
                 endDate: "End date",
                 form: "Form",
                 area: "Area",
-                formsCount: "Forms count"
+                formsCount: "Forms count",
+                createdAt: "Created at",
+                updatedAt: "Updated at"
             }
         },
         results: {
@@ -85,7 +91,9 @@ const en = {
                         selected: "Selected",
                         inputText: "Respondent answer text"
                     }
-                }
+                },
+                createdAt: "Created at",
+                updatedAt: "Updated at"
             }
         }
     },
@@ -108,7 +116,9 @@ const ru = {
                 firstName: "Имя",
                 middleName: "Отчество",
                 lastName: "Фамилия",
-                role: "Роль"
+                role: "Роль",
+                createdAt: "Дата и время создания",
+                updatedAt: "Дата и время изменения"
             },
             roles: {
                 interviewer: "Интервьюер",
@@ -132,7 +142,9 @@ const ru = {
                         text: "Текст ответа",
                         code: "Код ответа"
                     }
-                }
+                },
+                createdAt: "Дата и время создания",
+                updatedAt: "Дата и время изменения"
             },
             questionTypes: {
                 single: "Один ответ",
@@ -150,7 +162,9 @@ const ru = {
                 endDate: "Дата окончания",
                 form: "Бланк",
                 area: "Место проведения опроса",
-                formsCount: "Количество анкет"
+                formsCount: "Количество анкет",
+                createdAt: "Дата и время создания",
+                updatedAt: "Дата и время изменения"
             }
         },
         results: {
@@ -180,7 +194,9 @@ const ru = {
                         selected: "Выбран",
                         inputText: "Текст ответа респондента"
                     }
-                }
+                },
+                createdAt: "Дата и время создания",
+                updatedAt: "Дата и время изменения"
             }
         }
     },
