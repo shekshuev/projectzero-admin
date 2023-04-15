@@ -30,6 +30,7 @@ const en = {
             fields: {
                 id: "ID",
                 title: "Title",
+                description: "Description",
                 questionsCount: "Questions count",
                 questions: "Questions",
                 question: {
@@ -37,6 +38,7 @@ const en = {
                     type: "Type",
                     answers: "Answers",
                     required: "Required",
+                    isIgnoreString: "Answer codes to ignore this question",
                     answer: {
                         text: "Text",
                         code: "Answer code"
@@ -131,6 +133,7 @@ const ru = {
             fields: {
                 id: "ID",
                 title: "Название",
+                description: "Описание",
                 questionsCount: "Количество вопросов",
                 questions: "Вопросы",
                 question: {
@@ -138,6 +141,7 @@ const ru = {
                     type: "Тип вопроса",
                     answers: "Ответы",
                     required: "Обязательный",
+                    isIgnoreString: "Коды ответов, при выборе которых этот вопрос будет скрыт",
                     answer: {
                         text: "Текст ответа",
                         code: "Код ответа"

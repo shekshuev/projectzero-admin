@@ -16,6 +16,40 @@ class FormDataProvider extends BaseDataProvider {
             total: json.total
         }));
     }
+
+    async update(resource, params) {
+        const data = { ...params.data };
+        data.questions = data.questions?.map(question => {
+            const { isIgnoreString, ...rest } = question;
+            rest.isIgnore = isIgnoreString
+                .trim()
+                .split(/\s+/)
+                .filter(s => s.length > 0);
+            return rest;
+        });
+        const { json } = await httpClient(`${API_URL}/${resource}/${params.id}`, {
+            method: "PUT",
+            body: JSON.stringify(data)
+        });
+        return { data: json };
+    }
+
+    async create(resource, params) {
+        const data = { ...params.data };
+        data.questions = data.questions?.map(question => {
+            const { isIgnoreString, ...rest } = question;
+            rest.isIgnore = isIgnoreString
+                .trim()
+                .split(/\s+/)
+                .filter(s => s.length > 0);
+            return rest;
+        });
+        const { json } = await httpClient(`${API_URL}/${resource}`, {
+            method: "POST",
+            body: JSON.stringify(data)
+        });
+        return { data: json };
+    }
 }
 
 export default FormDataProvider;
